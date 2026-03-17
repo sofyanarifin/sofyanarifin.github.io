@@ -1,3 +1,5 @@
+<span id="text">Redirecting to the app...</span>
+
 <script>
     // Check if the user is already browsing our site
     const isInternalNavigation = document.referrer.includes("www.edgeprop.sg");
@@ -15,5 +17,6 @@
     } else {
         // If they are already on the site, just render the web content normally
         console.log("Internal user: Staying on web.");
+        document.getElementById("text").innerHTML = "Enjoy the site.";
     }
 </script>
