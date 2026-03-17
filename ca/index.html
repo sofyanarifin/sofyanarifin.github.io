@@ -1,0 +1,19 @@
+<script>
+    // Check if the user is already browsing our site
+    const isInternalNavigation = document.referrer.includes("www.edgeprop.sg");
+
+    if (!isInternalNavigation) {
+        // If they came from outside (Marketing Link), try to "kick" them to the app
+        // This uses the Custom Scheme or Universal Link
+        window.location.href = "https://www.edgeprop.sg/share/property-news/johor-regent-develop-holland-rd-land-parcels-low-density-housing-including-gcbs";
+
+        // Optional: Redirect to App Store if the app doesn't open after 2 seconds
+        setTimeout(() => {
+            console.log("App didn't open, staying on web or going to Store.");
+        }, 2000);
+
+    } else {
+        // If they are already on the site, just render the web content normally
+        console.log("Internal user: Staying on web.");
+    }
+</script>
